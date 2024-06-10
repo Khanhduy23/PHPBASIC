@@ -1,0 +1,236 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container-header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(41, 124, 124);
+}
+.goto-here{
+    min-width: 1500px;
+    height: 30px;
+    background-color: #82AE46;
+    text-transform: uppercase;  /*viết hoa*/
+}
+.goto-here .test{
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-left: 200px;
+    padding: 50px;
+}
+.nav-phone , .nav-email{
+    padding: 10px;
+}
+.menu-header{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-width: 1500px;
+    height: 60px;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 0 0 5px gray;
+}
+.menu-header .logo a{
+    color: #82AE46;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 60px;
+    padding-left: 100px;
+    float: left;
+}
+.nav{
+    position: absolute;
+    right: 250px;
+    line-height: 60px;
+}
+.nav li{
+    display: inline-block;
+}
+.nav li a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    padding: 0 25px;
+}
+.nav .nav-arrow-down{
+    font-size: 12px;
+}
+.nav .subnav{
+    list-style: none;
+}
+.nav .subnav{
+    min-width: 100px;
+    display: none;
+    top: 100%; /* Đảm bảo không bị lệch nếu trình duyệt có vấn đề*/
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+    z-index: 2;
+}
+#nav .subnav a{
+    color: black;
+    padding: 0 12px;
+    line-height: 10px;
+}
+.nav .subnav li{
+    display: block;
+    line-height: 50px;
+}
+.nav .subnav li:hover a, .nav>li:hover>a{
+    background-color: #ccc;
+    color: black;
+    display: block;
+}
+.nav >li:hover .subnav{
+    display: block;
+}
+#slider{
+    position: relative;
+    /* margin-top: 30px; */
+    padding-top: 50%;
+    background: url(/Vegefoods/assets/img/bg_1.jpg) top center / cover no-repeat;
+}
+.content{
+    height: 300px;
+}
+.content-section{
+    text-align: center;
+    padding-top: 100px;
+}
+.section-sub-heading{
+    color: #82AE46;
+    padding-bottom: 25px;
+}
+.section-heading{
+    font-size: 45px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+.section-sub1-heading{
+    opacity: 0.9;
+}
+.container-product{
+    /* background-color: #ccc; */
+    width: 100%;
+    min-width: 1500px;
+    max-width: 800px;
+    height: 800px;
+    position: relative;
+    margin: auto;
+}
+.box-product{
+    /* background-color: aquamarine; */
+    width: calc(20% - 10px);
+    max-width: 500px;
+    height: 350px;
+    margin: 10px -120px;
+    float: left;
+    margin-left: 150px;
+    border: 1px solid rgb(216, 214, 214);
+}
+.box-sanpham{
+    background-color: #fff;
+    width: 90%;
+    height: 240px;
+    margin: auto;
+}
+.box-sanpham img{
+    width: 90%;
+    padding-top: 10px;
+}
+.decs{
+    /* background-color: #82AE46; */
+    text-align: center;
+}
+.decs p{
+    padding: 5px 0;
+}
+.gia >p{
+    color: rgb(28, 120, 28);
+}
+.image-container img {
+    width: 100%;  /* Make image fit the container */
+    transition: transform 0.3s ease;  /* Smooth transition effect */
+}
+
+.image-container:hover img {
+    transform: scale(1.1);  /* Scale the image up on hover */
+}
+.buy{
+    text-align: center;
+    padding-top: 12px;
+}
+.buy button{
+    width: 80px;
+    padding: 5px;
+}
+.buy button:hover{
+    background-color: #c0bdbd;
+    color: black;
+}
+.container-footer{
+    background-color: #fffdfd;
+    width: 100%;
+    max-width: 1500px;
+    height: 400px;
+    margin: auto;
+    box-shadow: 0 0 2px black;
+}
+.content-ft{
+    /* background-color: #f2eeee; */
+    width: calc(25% - 200px );
+    height: 300px;
+    margin: auto;
+    float: left;
+    margin-left: 150px;
+    padding-top: 70px;
+}
+.content-ft a{
+    text-decoration: none;
+    color: black;
+    line-height: 35px;
+}
+.content-ft >h3{
+    padding-bottom: 15px;
+}
+
+h3{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: auto;
+}
+table, th, td {
+    border: none;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+td{
+    border-bottom: 1px solid gainsboro;
+}
+th{
+    background-color: rgb(151, 205, 70);
+    color: white;
+}
+img {
+    width: 100px;
+    height: auto;
+}
+article{
+    margin-bottom: 40px;
+}
