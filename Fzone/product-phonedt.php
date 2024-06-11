@@ -103,7 +103,7 @@
                          <input type="hidden" name="img" value="tainghe1.webp">
                          <input type="hidden" name="name" value="BENGOO G9000">
                          <input type="hidden" name="price" value="1490000">
-                         <input type="hidden" name="id" value="001">
+                         <input type="hidden" name="id" value="001">    
                 </form>
                     <!-- Phần chính -->
                         <div class="feedback"><a href="">Xem đánh giá</a></div>

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css1/style1.css">
     <title>Document</title>
     <style>
         body {
@@ -81,7 +81,6 @@
                     </tr>
                      ';
                      $i++;
-                    // <a href="delcart.php?del='.$i.'">Xoa</a>: Thẻ liên kết (<a>) với thuộc tính href chứa URL. Khi người dùng nhấp vào liên kết này, trình duyệt sẽ gửi một yêu cầu GET tới URL delcart.php với tham số del và giá trị của biến $i.
             }
         ?>
         <tr class="bold">

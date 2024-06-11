@@ -1,4 +1,4 @@
-<?php
+f<?php
 	ob_start();
 	session_start();
 ?>
@@ -12,6 +12,13 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/stylegh.css">
     <link rel="stylesheet" href="assets/css/style1.css">
+    <style>
+    input[type="submit"] {
+    padding: 5px;
+    width: 30px;
+    height: 36px;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -130,11 +137,15 @@
 
 										<div class="one-eight text-center">
 											<div class="display-tc">
-												<td><button> <a href= delcart.php?del='.$i.' class="closed"></a>
+                                            	<form method="get" action="delcart.php">
+                                                    <input type="submit" value="x"  name="delcart">
+                                                    <input type="hidden" value="'.$i.'" name="delid">
+                                                </form>
 											</div>
 										</div>
 									</div>
 								 ';
+                                 $i++;
 							}
 						}
 						?>

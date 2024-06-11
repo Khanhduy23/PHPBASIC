@@ -24,6 +24,21 @@
         h1{
             padding-top: 10px;
         }
+        table {
+            border: 2px solid blue;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+        th,td {
+            border: 1px solid blue;
+            padding: 10px;
+            text-align: center;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+        }
     </style>
 </head>
 <?php
@@ -53,17 +68,14 @@
         //upload hình
     if(isset($_FILES['img'])){
         $folder_path = 'img/';
-        // Đây là đường dẫn tới thư mục trên máy chủ mà bạn muốn lưu trữ các hình ảnh được tải lên. Trong trường hợp này, hình ảnh sẽ được lưu vào thư mục có tên img trong thư mục gốc của trang web.
         $img = $folder_path.basename($_FILES['img']['name']);
-        // Biến $img được gán giá trị là đường dẫn tuyệt đối tới tệp tin hình ảnh sau khi đã được tải lên. basename($_FILES['img']['name']) trả về tên tệp tin của hình ảnh (không kèm đường dẫn thư mục). Sau đó, nó được ghép với $folder_path để tạo ra đường dẫn hoàn chỉnh.
         move_uploaded_file($_FILES['img']['tmp_name'], $img);
-        // Hàm move_uploaded_file() được sử dụng để di chuyển tệp tin hình ảnh từ thư mục tạm trên máy chủ (nơi tệp tin được lưu trữ tạm thời sau khi tải lên) đến thư mục mục tiêu. Trong trường hợp này, tệp tin hình ảnh sẽ được di chuyển từ đường dẫn tạm $_FILES['img']['tmp_name'] đến đường dẫn mục tiêu $img.
-        var_dump($_FILES['img']);
-        // : Dòng này được sử dụng để in ra thông tin chi tiết về biến siêu toàn cục $_FILES sau khi hình ảnh đã được tải lên. Thông tin này bao gồm tên, loại, kích thước và đường dẫn tạm của tệp tin hình ảnh.
     }
 }
 ?>
 <body>
+<!-- $_SERVER["PHP_SELF"] trả về tên tệp hiện tại, tức là trang mà biểu mẫu đang nằm trên đó. -->
+<!-- đoạn mã này đảm bảo rằng khi biểu mẫu được gửi, nó sẽ gửi dữ liệu tới chính trang đó. -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
         <h1>Upload hình ảnh</h1>
         <p class="err">* là bắt buộc</p>
@@ -85,6 +97,35 @@
         <br><br>
         <input type="submit" value="Thêm sản phẩm" name="add">
     </form>
-
+    <h2>Thông tin đã nhập</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Hình sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Mô tả</th>
+        </tr>
+        <?php
+        $i = 0;
+            if(isset($_POST['add'])){
+                echo'
+                    <tr>
+                        <td>'.htmlspecialchars($id).'</td>
+                        <td>';
+                            if($img) {
+                                echo '<img src="' . htmlspecialchars($img) . '" alt="Hình sản phẩm">';
+                            } else {
+                                echo 'Không có hình';
+                            }
+                             echo '</td>
+                        <td>'.htmlspecialchars($name).'</td>
+                         <td>'.htmlspecialchars($price).'</td>
+                          <td>'.htmlspecialchars($des).'</td>
+                    </tr>
+                ';
+            }
+        ?>
+    </table>
 </body>
 </html>
