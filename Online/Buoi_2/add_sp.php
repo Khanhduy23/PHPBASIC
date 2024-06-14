@@ -5,19 +5,10 @@ session_start();
             $masp=$_POST['masp'];
             $tensp=$_POST['tensp'];
             $giasp=$_POST['giasp'];
-            // Trong hàm add_sp(), ba biến $masp, $tensp, và $giasp được sử dụng để nhận dữ liệu từ form và lưu trữ các thông tin sản phẩm.
             $sp=[$masp,$tensp,$giasp];
-            // Dòng 2: Kiểm tra và Khởi tạo Session nếu chưa tồn tại
-            // Giải thích:
-            // !isset($_SESSION['list_sp']): Kiểm tra xem $_SESSION['list_sp'] có tồn tại không. Nếu không tồn tại, nghĩa là chưa có sản phẩm nào được thêm vào.
-            // $_SESSION['list_sp'] = []: Khởi tạo $_SESSION['list_sp'] như một mảng trống nếu chưa tồn tại. Điều này đảm bảo rằng bạn có một mảng để chứa các sản phẩm.
             if(!isset($_SESSION['list_sp'])) $_SESSION['list_sp']=[];
             array_push($_SESSION['list_sp'],$sp);
-            // echo var_dump($_SESSION['list_sp']);
-            // Tổng Quan:
-            // Dòng 1: Tạo một mảng chứa thông tin sản phẩm mới.
-            // Dòng 2: Kiểm tra xem mảng chứa danh sách sản phẩm trong session có tồn tại không, nếu không thì khởi tạo.
-            // Dòng 3: Thêm sản phẩm mới vào mảng chứa danh sách sản phẩm trong session.
+
         }
     }
     add_sp();
