@@ -21,16 +21,17 @@ function add_user(){
 }
 add_user();
 
-// Hàm xóa người dùng
+// Hàm xóa
 function delete_user(){
-    if(isset($_POST['delete'])){
-        $index = $_POST['index'];
-        array_splice($_SESSION['users'], $index, 1);
+    if(isset($_POST['delcard'])){
+        $delcard = $_POST['delcard'];
+        array_splice($_SESSION['users'], $delcard, 1);
+        //1: Đây là số lượng phần tử bạn muốn loại bỏ từ mảng, bắt đầu từ vị trí $index. Trong trường hợp này, giá trị là 1, có nghĩa là bạn muốn loại bỏ một phần tử duy nhất tại vị trí $index.
     }
 }
 delete_user();
 
-// Hàm hiển thị người dùng
+// Hàm hiển thị
 function show_users(){
     $str = '';
     foreach($_SESSION['users'] as $index => $user){
@@ -41,7 +42,7 @@ function show_users(){
             <td>'.$user['email'].'</td>
             <td>
                 <form action="" method="post" style="display:inline;">
-                    <input type="hidden" name="index" value="'.$index.'">
+                    <input type="hidden" name="delcard" value="'.$index.'">
                     <input type="submit" name="delete" value="Xóa">
                 </form>
             </td>
@@ -63,7 +64,6 @@ function show_users(){
             text-align: center;
         }
         form {
-            border: 1px solid black;
             width: 100%;
             padding: 20px;
         }
@@ -87,6 +87,7 @@ function show_users(){
             background-color: blue;
             color: white;
             border: none;
+            outline: none;
             border-radius: 5px;
         }
     </style>
